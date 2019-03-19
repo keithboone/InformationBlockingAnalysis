@@ -1,0 +1,136 @@
+@startuml
+title Definitions
+interface "[[https://www.federalregister.gov/d/2019-02224/p-2459 {45 CFR 171.102}Access]]" as Access
+interface Ability
+class "[[https://www.federalregister.gov/d/2019-02224/p-2461 {45 CFR 171.102}Actor]]" as Actor
+class "[[https://www.federalregister.gov/d/2019-02224/p-1989 {45 CFR 170.102}API Data Provider]]" as APIDataProvider 
+class "[[https://www.federalregister.gov/d/2019-02224/p-1990 {45 CFR 170.102}API Technology Supplier]]" as APITechnologySupplier
+class "[[https://www.federalregister.gov/d/2019-02224/p-1990 {45 CFR 170.102}API Technology]]" as APITechnology
+class "[[https://www.federalregister.gov/d/2019-02224/p-1991 {45 CFR 170.102}API User]]" as APIUser
+class "[[https://www.law.cornell.edu/uscode/text/42/300jj#3 {45 CFR 171.102 and 42 USC 300jj(3)}Health Care Provider]]" as HealthCareProvider
+class "[[https://www.federalregister.gov/d/2019-02224/p-2471 {45 CFR 171.102}Health Information Exchange]]" as HealthInformationExchange
+class "[[https://www.federalregister.gov/d/2019-02224/p-2472 {45 CFR 171.102}Health Information Network]]" as HealthInformationNetwork
+class "[[https://www.federalregister.gov/d/2019-02224/p-2475 {45 CFR 171.102}Health IT developer of certified health IT]]" as CertifiedHealthITDeveloper
+class "[[https://www.law.cornell.edu/uscode/text/42/300jj#1 {42 USC 300jj(1)}Certified EHR technology]]" as CertifiedEHRTechnology
+class "[[https://www.federalregister.gov/d/2019-02224/p-2463 {45 CFR 171.102}Electronic Health Information]]" as ElectronicHealthInformation
+class "[[https://www.law.cornell.edu/cfr/text/45/160.103 {45 CFR 160.103}Electronic Protected Health Information]]" as ElectronicProtectedHealthInformation
+class "[[https://www.federalregister.gov/d/2019-02224/p-2463 {45 CFR 171.102}Electronic Media]]" as ElectronicMedia
+interface "[[https://www.federalregister.gov/d/2019-02224/p-2468 {45 CFR 171.102 Exchange means the ability for electronic health information to be transmitted securely and efficiently between and among different technologies, systems, platforms, or networks in a manner that allows the information to be accessed and used.}Exchange]]" as Exchange
+note bottom
+Exchange means ability for EHI to be transmitted which allows
+for access and use, but Use is defined as access.  So we need
+only reference use, because Use implies Access
+end note
+class "[[https://www.federalregister.gov/d/2019-02224/p-2469 {45 CFR 171.102}Fee]]" as Fee
+class "[[https://www.law.cornell.edu/uscode/text/42/1320d#4 {42 USC 1320d(4)}Health Information]]" as HealthInformation
+class "[[https://www.law.cornell.edu/uscode/text/42/300jj#5 {42 USC 300jj(5)}Health Information Technology]]" as HealthInformationTechnology
+class User
+
+class "[[https://www.law.cornell.edu/cfr/text/45/170.102 {45 CFR 170.102}Health IT Module]]" as HealthITModule
+class "[[https://www.federalregister.gov/d/2019-02224/p-1993 {45 CFR 170.102}Interoperability]]" as Interoperability
+interface "[[https://www.federalregister.gov/d/2019-02224/p-2477 {45 CFR 170.102} Interfere With]]" as InterfereWith
+class "[[https://www.federalregister.gov/d/2019-02224/p-2478 {45 CFR 171.102} Interoperability Element]]" as InteroperabilityElement
+interface "[[{§ 171.103 and 42 U.S.C. 300jj-52(a)} Information Blocking]]" as InformationBlocking
+class LicensingFee
+class CostRecoveryFee
+class "[[https://www.federalregister.gov/d/2019-02224/p-2484 {45 CFR 171.102} Permissible Purpose]]" as PermissiblePurpose
+class "[[https://www.law.cornell.edu/cfr/text/45/160.103 {45 CFR 160.103 Person means a natural person, trust or estate, partnership, corporation, professional association or corporation, or other entity, public or private.} Person]]" as Person
+interface "[[https://www.federalregister.gov/d/2019-02224/p-2487 {45 CFR 171.102} Practice]]" as Practice
+class "[[https://www.law.cornell.edu/cfr/text/45/160.103 {45 CFR 160.103} Protected Health Information]]" as ProtectedHealthInformation
+interface "[[https://www.federalregister.gov/d/2019-02224/p-2488 {45 CFR 171.102 Use means the ability of health IT or a user of health IT to access relevant electronic health information; to comprehend the structure, content, and meaning of the information; and to read, write, modify, manipulate, or apply the information to accomplish a desired outcome or to achieve a desired purpose.} Use]]" as Use
+note bottom
+Use means ability to access by health IT or User
+end note
+interface "[[https://www.federalregister.gov/d/2019-02224/p-2493 {45 CFR 171.200} Exception]]" as Exception
+interface "[[https://www.federalregister.gov/d/2019-02224/p-2494 {45 CFR 171.201} Preventing Harm]]" as PreventingHarm
+interface "[[https://www.federalregister.gov/d/2019-02224/p-2505 {45 CFR 171.202} Promoting the privacy of electronic health information]]" as PromotingPrivacy
+interface "[[https://www.federalregister.gov/d/2019-02224/p-2537 {45 CFR 171.203} Promoting the security of electronic health information]]" as PromotingSecurity
+interface "[[https://www.federalregister.gov/d/2019-02224/p-2549 {45 CFR 171.204} Recovering costs reasonably incurred]]" as CostRecovery
+interface "[[https://www.federalregister.gov/d/2019-02224/p-2567 {45 CFR 171.205} Responding to requests that are infeasible]]" as InfeasibleRequests
+interface "[[https://www.federalregister.gov/d/2019-02224/p-2583 {45 CFR 171.206} Licensing of interoperability elements on reasonable and non-discriminatory terms]]" as Licensing
+interface "[[https://www.federalregister.gov/d/2019-02224/p-2615 {45 CFR 171.207} Maintaining and improving health IT performance]]" as Maintenance
+
+hide PromotingPrivacy
+hide PromotingSecurity
+hide CostRecovery
+hide InfeasibleRequests
+hide Licensing
+hide Maintenance
+
+PreventingHarm -[hidden]-> PromotingPrivacy 
+PromotingPrivacy -[hidden]-> PromotingSecurity 
+PromotingSecurity -[hidden]-> CostRecovery 
+CostRecovery -[hidden]-> InfeasibleRequests 
+InfeasibleRequests -[hidden]-> Licensing 
+Licensing -[hidden]-> Maintenance
+ 
+Exception x-x InformationBlocking  
+Access <.. InformationBlocking : <<discourages>>
+Access <.. InterfereWith : <<appliesTo>>
+Practice <|-- Exception
+
+Ability <|-- Access
+HealthITModule <|-- APITechnology 
+InteroperabilityElement <|-- APITechnology 
+APIDataProvider ..> APITechnology : [[https://www.federalregister.gov/d/2019-02224/p-1989 {45 CFR 170.102} <<deploys>>]]
+APITechnologySupplier ..> APITechnology : [[https://www.federalregister.gov/d/2019-02224/p-1990 {45 CFR 170.102} <<creates>>]]
+User <|-- APIUser : "[[{Obvious}]]"
+Person <|-- APIUser : "[[https://www.federalregister.gov/d/2019-02224/p-1991 {45 CFR 170.102}<<refersTo>>]]"
+APIUser .> APITechnology : <<uses>>
+HealthInformationTechnology <|-- CertifiedEHRTechnology
+HealthInformationTechnology <|-- HealthITModule 
+User .>  HealthInformationTechnology : <<uses>> 
+CertifiedHealthITDeveloper <|-- APITechnologySupplier  
+
+Actor ..|> Practice : "[[https://www.federalregister.gov/d/2019-02224/p-2487 {45 CFR 171.102 Practice means one or more related acts or omissions by an actor.} <<implements>>]]"
+Actor <|-- CertifiedHealthITDeveloper : "[[https://www.federalregister.gov/d/2019-02224/p-2460 {45 CFR 171.102 Actor means a ..., health IT developer of certified health IT, ...}} <<means>>]]"
+Actor <|-- HealthCareProvider : "[[https://www.federalregister.gov/d/2019-02224/p-2460 {45 CFR 171.102 Actor means a health care provider...}} <<means>>]]"
+Actor <|-- HealthInformationExchange : "[[https://www.federalregister.gov/d/2019-02224/p-2460 {45 CFR 171.102 Actor means ... health information exchange ...}} <<means>>]]"
+Actor <|-- HealthInformationNetwork : "[[https://www.federalregister.gov/d/2019-02224/p-2460 {45 CFR 171.102 Actor means ... or health information network.}} <<means>>]]"
+Fee <-- Actor : <<charges>>
+interface Charges
+Practice <|-- Charges
+(Fee, Actor) - Charges
+interface Pays
+Practice <|-- Pays  
+Fee <-- Actor : <<pays>>
+(Fee, Actor) - Pays
+
+Person <|-- CertifiedHealthITDeveloper
+
+Exception <|-- PreventingHarm
+Exception <|-- PromotingPrivacy
+Exception <|-- PromotingSecurity
+Exception <|-- CostRecovery
+Exception <|-- InfeasibleRequests
+Exception <|-- Licensing
+Exception <|-- Maintenance
+
+Fee <|-- LicensingFee
+Fee <|-- CostRecoveryFee
+  
+HealthInformation <|-- ProtectedHealthInformation 
+HealthInformation <|-- ElectronicHealthInformation
+
+ProtectedHealthInformation <|-- ElectronicProtectedHealthInformation
+ElectronicHealthInformation <|-- ElectronicProtectedHealthInformation 
+
+Practice ..> Ability : <<depends>>
+Use <|-- Exchange
+Practice <|-- InterfereWith
+
+Practice <|-- InformationBlocking
+InterfereWith <|-- InformationBlocking  
+Practice <|-- Access
+Access <|-- Use
+
+Exchange --> ElectronicHealthInformation  : <<transmits>>
+ ElectronicHealthInformation <-- ElectronicMedia : <<maintains>>
+Use -> ElectronicHealthInformation : "[[https://www.federalregister.gov/d/2019-02224/p-2488 {45 CFR 171.102} <<uses>>]]"
+InteroperabilityElement ..|> Access : <<implements>> 
+PermissiblePurpose -> Use : <<constrains>>
+
+HealthInformationTechnology <-- CertifiedHealthITDeveloper  : "[[https://www.federalregister.gov/d/2019-02224/p-2475 {45 CFR 171.102} <<creates>>]]"
+
+
+@enduml
